@@ -91,16 +91,4 @@ The script provides detailed feedback including:
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests via GitHub issues.
-
-## License
-
-[MIT License](LICENSE)
-
-## Author
-
-[Your Name/Organization]
-
-## Last Updated
-
-[Current Date] 
+Feel free to submit issues and enhancement requests
