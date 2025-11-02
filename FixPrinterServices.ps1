@@ -98,7 +98,7 @@ function Configure-RPCSettings {
     $rpcPath = "HKLM:\Software\Policies\Microsoft\Windows NT\Printers\RPC"
     try {
         if (Test-AndCreateRegistryPath $rpcPath) {
-            Set-ItemProperty -Path $rpcPath -Name RpcUseNamedPipeProtocol -Type DWord -Value 1 -ErrorAction Stop
+            Set-ItemProperty -Path $rpcPath -Name RpcUseNamedPipeProtocol -Type DWord -Value 0 -ErrorAction Stop
             Write-Log "RPC settings configured successfully."
         }
     } catch {
