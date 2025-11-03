@@ -68,8 +68,10 @@ function Restart-SpoolerService {
 function Enable-PrinterFeatures {
     $features = @(
         'Printing-PrintToPDFServices-Features',
-        'Printing-LPDPrintService',
-        'Printing-LPRPortMonitor'
+        'Printing-Foundation-Features',
+        'Printing-Foundation-InternetPrinting-Client',
+        'Printing-Foundation-LPDPrintService',
+        'Printing-Foundation-LPRPortMonitor'
     )
 
     foreach ($feature in $features) {
@@ -98,7 +100,7 @@ function Configure-RPCSettings {
     $rpcPath = "HKLM:\Software\Policies\Microsoft\Windows NT\Printers\RPC"
     try {
         if (Test-AndCreateRegistryPath $rpcPath) {
-            Set-ItemProperty -Path $rpcPath -Name RpcUseNamedPipeProtocol -Type DWord -Value 0 -ErrorAction Stop
+            Set-ItemProperty -Path $rpcPath -Name RpcUseNamedPipeProtocol -Type DWord -Value 1 -ErrorAction Stop
             Write-Log "RPC settings configured successfully."
         }
     } catch {
